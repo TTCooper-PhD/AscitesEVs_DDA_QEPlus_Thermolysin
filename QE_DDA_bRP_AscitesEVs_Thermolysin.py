@@ -17,9 +17,18 @@ os.listdir("MQ")
 os.listdir("MQ/Grouped")
 os.listdir("MQ/Seperated")
 p2_MQ_proteins=os.path.join(os.getcwd, "MQ","Seperated","proteinGroups.txt")
-p2_MQ_proteins
-df = pd.read_csv("C:\Users\tcoop\Desktop\AscitesEVs_DDA_QEPlus_Thermolysin\MQ_\Seperated\proteinGroups.txt", delimiter = "\t")
-print(df)
+df = pd.read_csv(p2_MQ_proteins, delimiter = "\t")
+
+class MQ():
+    
+def MQ_get_samples(MQ_df):
+    x=[x.split("LFQ intensity ")[1] for x in MQ_df.columns if "LFQ" in x]
+    print(x)
+
+def MQ_
+
+get_MQ_samples(df)
+
 
 
 ## PEAK ANALYSES
