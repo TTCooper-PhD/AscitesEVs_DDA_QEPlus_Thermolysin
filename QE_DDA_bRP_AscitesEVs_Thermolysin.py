@@ -25,21 +25,21 @@ p2_MQ_peptides=os.path.join("MQ","Seperated","peptides.txt")
 MQ_proteins = pd.read_csv(p2_MQ_proteins, delimiter = "\t")
 MQ_peptides = pd.read_csv(p2_MQ_peptides, delimiter="\t")
 
-old_names = MQ_proteins.columns
+MQ_proteins.columns
 new_names = [name.replace('FT', 'X') for name in old_names]
 MQ_proteins.rename(columns={old_name: new_name for old_name, new_name in zip(old_names, new_names)}, inplace=True)
 MQ_samples=MQ_get_samples(MQ_proteins)
 
 MQ_Pro={} #MaxQuant Dictionary of Protein IDs, Sample is Parent Key
 MQ_Pep= {} #MaxQuant Dictionary of Peptide IDs, Sample is Parent Key
-pro_grab=["Gene names","Sequence"]
-pep_grab=[]
-i=1
+pro_grab=["Gene names","Best MS/MS"]
+
 for sample in MQ_samples:
     x=[x for x in MQ_proteins if sample in x]
-    print(i, sample)
-    i+=1
     print(len(x))
+    x2=x+pro_grab
+    temp=MQ_proteins[x2]
+    print(len(temp.columns))
     
     
 \
