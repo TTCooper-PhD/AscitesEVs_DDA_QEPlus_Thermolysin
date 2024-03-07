@@ -1372,3 +1372,5 @@ PEAKS/de novo only peptides.csv
 PEAKS/peptide.csv
 PEAKS/protein-peptides.csv
 PEAKS/proteins.csv
+*.png
+*.csv
